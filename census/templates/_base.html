@@ -63,7 +63,7 @@
         <![endif]-->
 
         {% block header %}
-        <header id="page-header">
+        <!-- <header id="page-header">
             <div id="page-header-title" class="wrapper clearfix">
                 {% if not hide_nav_tools %}
                 <i id="menu-toggle" class="fa fa-bars"></i>
@@ -76,7 +76,7 @@
                     <div class="tool-group">
                         <input name="geography_select" class="geography-select" type="text" placeholder="Search for Michigan places or zip codes..." autocomplete="off">
                     </div>
-<!--                     {% if not hide_nav_compare %}
+                    {% if not hide_nav_compare %}
                     <span class="separator">or</span>
                     <div class="tool-group">
                         <a class="button" href="{% url 'table_search' %}">
@@ -84,24 +84,24 @@
                             Search for data
                         </a>
                     </div>
-                    {% endif %} -->
+                    {% endif %}
                 </div>
                 {% endif %}
                 <div class="beta-ribbon">
                     <img class="beta-image" src="{{ STATIC_URL }}img/beta.png">
                 </div>
             </div>
-        </header>
-        {% block header_content %}{% endblock header_content %}
-        {% endblock %}
+        </header> -->
+        <!-- {% block header_content %}{% endblock header_content %}
+        {% endblock %} -->
 
-        {% block content_container %}
+        <!-- {% block content_container %}
         <div class="content-container wrapper clearfix">
             {% block content %}{% endblock %}
         </div>
-        {% endblock %}
+        {% endblock %} -->
 
-        <footer id="page-footer">
+        <!-- <footer id="page-footer">
             <section class="wrapper footer-container clearfix">
                 {% block footer_content %}
                 <ul class="ul-icon-list column-third">
@@ -140,7 +140,7 @@
                 </ul>
                 {% endblock footer_content %}
             </section>
-        </footer>
+        </footer> -->
         {% endblock body %}
 
         {% block body_javascript %}
