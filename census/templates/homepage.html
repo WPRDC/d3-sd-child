@@ -136,9 +136,11 @@
             />
         </div>
         <div class="l-flex-center">
-            <button>
-                <img src="{{ STATIC_URL }}img/map-pin.svg"/>Search By Street Address
-            </button>
+            <a href="{% url 'locate' %}">
+                <button>
+                    <img src="{{ STATIC_URL }}img/map-pin.svg"/>Search By Street Address
+                </button>
+            </a>
         </div>
         <div class="l-flex-center">
             <img class="c-arrow" src="{{ STATIC_URL }}img/section-arrow.svg"/>
@@ -155,72 +157,32 @@
         </div>
         <div class="l-flex-center">
             <div class="button-group">
-                <button class="c-topics-button">Getting Started</button>
-                <button class="c-topics-button">Tables Codes</button>
-                <button class="c-topics-button">Census Terms</button>
+                <a href="{% url 'topic_detail' 'getting-started' %}">
+                    <button class="c-topics-button">Getting Started</button>
+                </a>
+                <a href="{% url 'topic_detail' 'table-codes' %}">
+                    <button class="c-topics-button">Tables Codes</button>
+                </a>
+                <a href="{% url 'topic_detail' 'glossary' %}">
+                    <button class="c-topics-button">Census Terms</button>
+                </a>
             </div>
         </div>
         <div class="l-flex-center">
             <input class="c-input-text c-input-text--grey" type="text" placeholder="Search for a topic by keyword…"/>
         </div>
         <div class="l-flex-space-between">
+            {% for row in topics_list|columns:7 %}
             <ul>
-                <li>
-                    <a class="hyperlink-regular" href="#">Age and Sex</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Birth</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Children</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Commute</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Education</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Employment</a>
-                </li>
+                {% for topic in row %}
+                    <li>
+                        <a class="hyperlink-regular" id="topic-{{ topic.slug }}" href="{% url 'topic_detail' topic.slug %}">{{ topic.title }}</a>
+                    </li>
+
+                {% endfor %}
             </ul>
-            <ul>
-                <li>
-                    <a class="hyperlink-regular" href="#">Families</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Geography</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Health Insurance</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Income</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Migration</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Poverty</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a class="hyperlink-regular" href="#">Public Assistance</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Race and Origin</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Same-Sex Couples</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Seniors</a>
-                </li>
-                <li>
-                    <a class="hyperlink-regular" href="#">Veterans and Military</a>
-                </li>
-            </ul>
+
+            {% endfor %}
         </div>
         <div class="l-flex-center">
             <div class="dropdown"></div>
