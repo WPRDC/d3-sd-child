@@ -5,7 +5,7 @@
 {% block body_id %}homepage{% endblock %}
 
 {% block content_container %}
-{#    TODO: Figure out why this comment is necessary to display everything below#}
+    {#    TODO: Figure out why this comment is necessary to display everything below#}
     <!-- -->
     <div class="c-intro-panel">
         <header>
@@ -173,14 +173,15 @@
         </div>
         <div class="l-flex-space-between">
             {% for row in topics_list|columns:7 %}
-            <ul>
-                {% for topic in row %}
-                    <li>
-                        <a class="hyperlink-regular" id="topic-{{ topic.slug }}" href="{% url 'topic_detail' topic.slug %}">{{ topic.title }}</a>
-                    </li>
+                <ul>
+                    {% for topic in row %}
+                        <li>
+                            <a class="hyperlink-regular" id="topic-{{ topic.slug }}"
+                               href="{% url 'topic_detail' topic.slug %}">{{ topic.title }}</a>
+                        </li>
 
-                {% endfor %}
-            </ul>
+                    {% endfor %}
+                </ul>
 
             {% endfor %}
         </div>
@@ -247,7 +248,9 @@
             </div>
             <div class="details">
                 <p class="body-text-32">Suggestions? We’d love to hear them! Contact us at
-                    <span class="light-blue">askd3@datadrivendetroit.org</span>
+                    <a href="mailto:askd3@datadrivendetroit.org" target="_top">
+                        <span class="light-blue">askd3@datadrivendetroit.org</span>
+                    </a>
                 </p>
                 <div class="divider"></div>
                 <div class="newsletter">
