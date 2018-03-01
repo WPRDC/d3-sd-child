@@ -148,8 +148,8 @@
         <div class="l-flex-center">
             <h1 class="body-text-large">Hundreds of datasets by location across Detroit and Michigan!</h1>
         </div>
-        <div class="l-flex-center">
-            <input class="c-input-text c-input-text--purple" type="text"
+        <div class="l-flex-center" id="geography-select-wrapper">
+            <input class="geography-select" type="text"
                    placeholder="Search by Michigan places or zip codes…"
             />
         </div>
@@ -186,8 +186,11 @@
                 </a>
             </div>
         </div>
-        <div class="l-flex-center">
-            <input class="c-input-text c-input-text--grey" type="text" placeholder="Search for a topic by keyword…"/>
+        <div class="l-flex-center" >
+            <div id="topic-select-wrapper">
+                <input id="topic-select" class="c-input-text c-input-text--grey" type="text" placeholder="Search for a topic by keyword…"/>
+            </div>
+
         </div>
         <div class="l-flex-space-between">
             {% for row in topics_list|columns:7 %}
