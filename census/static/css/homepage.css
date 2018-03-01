@@ -171,11 +171,13 @@
 .c-critical-questions-panel ul li {
     flex: 0 1 33.33%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 40px;
 }
-
+.c-critical-questions-panel ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .c-critical-questions-panel ul p {
     font-family: 'Quicksand-Bold';
     font-size: 32px;
