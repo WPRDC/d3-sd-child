@@ -117,9 +117,10 @@ function makeAddressSearchWidget(element) {
                 '<p class="result-name">{{formatted_address}}</p>'
             )
         }
-    });
+    }).
 
     element.on('typeahead:selected', selectAddress);
+ 
 }
 
 makeAddressSearchWidget($searchInput);
