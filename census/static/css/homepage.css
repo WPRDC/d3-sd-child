@@ -17,10 +17,11 @@
 }
 
 .body-text-ligher {
-    font-family: "Quicksand-Regular";
+    font-family: "Quicksand";
 }
 
 .body-text-32 {
+    font-family: 'Quicksand-Bold';
     font-size: 32px;
 }
 
@@ -107,7 +108,7 @@ nav .container {
 
 .c-intro-panel header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     width: 85%;
     margin: 0 auto;
@@ -125,16 +126,20 @@ nav .container {
 }
 
 .c-intro-panel .state-of-detroit-child {
-    margin-right: 130px;
+    margin-left: -240px;
 }
+
+
 
 .c-intro-panel .navigation-icon-holder .navigation-icon {
     position: fixed;
     cursor: pointer;
+    margin-left: -30px;
 }
 
 .c-our-goal-panel {
     background-image: url("../assets/our-goal-bg.png");
+    background: #fff;
     padding: 110px 0;
 }
 
@@ -216,10 +221,14 @@ nav .container {
 
 .c-critical-questions-panel ul li {
     flex: 0 1 33.33%;
+    margin-bottom: 40px;
+}
+
+.c-critical-questions-panel ul a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 40px;
+    justify-content: center;
 }
 
 .c-critical-questions-panel ul p {
@@ -229,6 +238,7 @@ nav .container {
     line-height: 45px;
     text-align: center;
     width: 90%;
+    margin: 32px 0;
 }
 
 .c-critical-questions-panel ul .image-holder {
@@ -268,6 +278,7 @@ nav .container {
 
 .c-explore-panel input[type='text']:focus {
     background: #A8D94E;
+    border: 1.5px solid black;
 }
 
 .c-explore-panel button {
@@ -300,7 +311,16 @@ nav .container {
     margin-top: -60px;
     background: #A8D94E;
     font-family: 'Quicksand-Medium' !important;
+    left: auto !important;
+    border-radius: 7.2px;
+}
 
+.c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile {
+    border-radius: 7.2px;
+}
+
+.c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile .tt-suggestion {
+    border-radius: 7.2px;
 }
 
 .c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile p {
@@ -311,7 +331,8 @@ nav .container {
 }
 
 .c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile p:hover {
-    background: #87AF3F;;
+    background: #87AF3F;
+    border: 1.5px solid black;
 }
 
 .c-topics-panel {
@@ -350,6 +371,7 @@ nav .container {
 }
 
 .c-topics-panel .button-group button {
+    font-family: 'Quicksand-Medium';
     background: #76AFF2;
     color: #fff;
     border-radius: 90px;
@@ -368,6 +390,35 @@ nav .container {
 .c-topics-panel .dropdown {
     display: none;
     margin: 20px 50px;
+}
+
+.c-topics-panel #topic-select-wrapper{
+    width: 100%;
+}
+.c-topics-panel .twitter-typeahead {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+
+.c-topics-panel .twitter-typeahead .tt-menu{
+    width: 72%;
+    left:auto !important;
+    background: #A8D94E;
+    font-family: 'Quicksand-Medium' !important;
+
+}
+
+.c-topics-panel .twitter-typeahead .tt-menu .tt-dataset-topics h5 {
+    font-family: 'Quicksand-Medium' !important;
+    padding: 20px 30px;
+    font-size: 29px !important;
+    color: #fff;
+}
+
+.c-topics-panel .twitter-typeahead .tt-menu .tt-dataset-topics h5:hover {
+    background: #87AF3F;;
 }
 
 .c-additional-resources-panel {
@@ -447,7 +498,7 @@ footer .c-social-media .social-icons {
 }
 
 footer .skillman p {
-    font-family: 'Quicksand-Regular';
+    font-family: 'Quicksand';
     font-size: 22px;
     margin-bottom: 0;
 }
@@ -459,7 +510,7 @@ footer .skillman img {
 
 footer .designed-by {
     margin-top: 40px;
-    font-family: 'Quicksand-Regular';
+    font-family: 'Quicksand';
     font-size: 24px;
 }
 
@@ -611,11 +662,13 @@ footer .designed-by span {
     }
     .c-critical-questions-panel ul li {
         flex: 0 1 100%;
+        margin-bottom: 20px;
     }
     .c-critical-questions-panel ul p {
         font-size: 18px;
         line-height: 23px;
         width: 80%;
+        margin: 20px 0;
     }
     .c-critical-questions-panel ul .image-holder img {
         width: 190px;
@@ -678,6 +731,7 @@ footer .designed-by span {
     .c-topics-panel .dropdown {
         display: block;
     }
+
     .c-additional-resources-panel .section-main-image {
         width: 206px;
         padding: 45px 0;
@@ -805,14 +859,14 @@ input {
     font-size: 32px;
 }
 
-.c-critical-questions-panel ul li {
+/* .c-critical-questions-panel ul li {
     flex: 0 1 33.33%;
     display: flex;
     margin-bottom: 40px;
-}
+} */
 
-.c-critical-questions-panel ul li a {
+/* .c-critical-questions-panel ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */

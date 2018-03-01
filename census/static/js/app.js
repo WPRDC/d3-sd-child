@@ -500,9 +500,6 @@ let mobileToggle = () => {
 
         $('.main-container').css('width', contentWidth);
 
-        $('.parent-container').bind('touchmove', function (e) {
-            e.preventDefault()
-        });
 
         $(".parent-container").animate({
             "marginLeft": ["-90%"]
