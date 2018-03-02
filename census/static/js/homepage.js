@@ -27,6 +27,7 @@ $('.nav-link').click(() => {
 
 let desktopToggle = () => {
     if (!isNavOpen) {
+        console.log('here');
         $('body').animate({
             scrollTop: 0
         }, 'fast')
