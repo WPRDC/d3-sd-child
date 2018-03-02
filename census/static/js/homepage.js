@@ -13,8 +13,7 @@ navIcon.onclick = () => {
 
 
 $('.nav-link').click(() => {
-    $(nav).css('display', 'none');
-    isNavOpen = false;
+    mobileToggle();
 });
 
 
@@ -47,7 +46,7 @@ let mobileToggle = () => {
         isNavOpen = true;
 
     } else {
-        $('.main-container').unbind('touchmove');
+        // $('.main-container').unbind('touchmove');
 
         $(".parent-container").animate({
             "marginLeft": ["0%"]
@@ -92,7 +91,6 @@ let hideNav = () => {
         lastScrollTop = st;
     }
 };
-
 if (window.innerWidth > 500) {
     hideNav();
 }
