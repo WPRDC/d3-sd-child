@@ -292,6 +292,10 @@ function makeTopicSelectWidget(element) {
         //$('#explore-callouts').hide();
         //topicFilters.prop('checked', false);
     });
+
+       element.on('typeahead:beforeclose', function(event, data) {
+        event.preventDefault();
+       });
 }
 
 function makePlaceSelectWidget(element) {

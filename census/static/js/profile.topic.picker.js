@@ -222,6 +222,10 @@ function makeTopicSelectWidget(element) {
             window.location = '/data/table/?table=' + chosenTableID + "&geo_ids=" + thisGeoID + "&primary_geo_id=" + thisGeoID;
         }
     });
+
+    element.on('typeahead:beforeclose', function(event, data) {
+        event.preventDefault();
+       });
 }
 
 jQuery(document).ready(function(){

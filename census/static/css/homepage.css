@@ -718,7 +718,18 @@ footer .designed-by span {
         border-radius: 7.2px;
         font-size: 12px;
     }
+
+    .c-topics-panel .twitter-typeahead .tt-menu {
+        width: 85%;
+    }
+
     .c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile p {
+        padding: 15px 13px;
+        font-size: 12px !important;
+        color: #fff;
+    }
+
+    .c-topics-panel .twitter-typeahead .tt-menu .tt-dataset-topics h5 {
         padding: 15px 13px;
         font-size: 12px !important;
         color: #fff;
