@@ -449,6 +449,7 @@ nav .container {
 .c-additional-resources-panel li img {
     max-width: 160px;
     margin-right: 50px;
+    max-height: 200px;
 }
 
 .c-additional-resources-panel li p {
@@ -524,7 +525,7 @@ footer .designed-by span {
 
 .c-arrow {
     width: 108px;
-    margin-bottom: -40px;
+    margin-bottom: -60px;
 }
 
 .c-huge-rounded-button {
@@ -592,7 +593,6 @@ footer .designed-by span {
         height: 100%;
         overflow-x: hidden;
         overflow-y: scroll;
-        z-index: -1;
     }
     nav a {
         font-size: 12px;
@@ -735,6 +735,7 @@ footer .designed-by span {
     .c-topics-panel .button-group {
         width: 85%;
         margin: 50px 0;
+        flex-direction: column;
     }
     .c-topics-panel .button-group button {
         margin-bottom: 25px;
@@ -827,6 +828,7 @@ footer .designed-by span {
     }
     .c-arrow {
         width: 37px;
+        height: 37px;
         margin-bottom: -15px;
     }
 }

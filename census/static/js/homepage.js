@@ -15,15 +15,15 @@ navIcon.onclick = () => {
 $('.nav-link').click(() => {
     $(nav).css('display', 'none');
     isNavOpen = false;
-})
-;
+});
 
 
-let desktopToggle = () =>
-{
+let desktopToggle = () => {
     console.log(isNavOpen, "Status of FLAG");
     if (!isNavOpen) {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({
+            scrollTop: 0
+        }, "slow");
         $(nav).slideDown(600);
         isNavOpen = true;
     } else {
@@ -32,8 +32,7 @@ let desktopToggle = () =>
     }
 };
 
-let mobileToggle = () =>
-{
+let mobileToggle = () => {
     let contentWidth;
 
     if (!isNavOpen) {
@@ -94,4 +93,6 @@ let hideNav = () => {
     }
 };
 
-hideNav();
+if (window.innerWidth > 500) {
+    hideNav();
+}
