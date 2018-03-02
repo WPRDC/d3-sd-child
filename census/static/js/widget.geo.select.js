@@ -77,9 +77,9 @@ function makeGeoSelectWidget(element) {
           window.location = datum['url'];
         }
     });
-    // element.on('typeahead:beforeclose', function(event, data) {
-    //     event.preventDefault();
-    //    });
+    element.on('typeahead:beforeclose', function(event, data) {
+        event.preventDefault();
+       });
 }
 
 makeGeoSelectWidget(geoSelect);
