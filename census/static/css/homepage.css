@@ -128,7 +128,8 @@ nav .container {
 }
 
 .c-intro-panel .state-of-detroit-child {
-    margin-left: -240px;
+    margin-left: -25%;
+    width: 60%;
 }
 
 .c-intro-panel .body-text-large:first-of-type {
@@ -277,8 +278,13 @@ nav .container {
     padding: 30px 50px;
     font-size: 24px;
     color: #FFFFFF;
-    background: #7E4BAB;
+    background: #A8D94E;
 }
+
+.c-explore-panel input[type='text']::placeholder {
+    color: #FFFFFF;
+}
+
 
 .c-explore-panel input[type='text']:focus {
     background: #A8D94E;
@@ -324,6 +330,7 @@ nav .container {
 }
 
 .c-explore-panel .twitter-typeahead .tt-menu .tt-dataset-profile .tt-suggestion {
+    cursor: pointer;
     border-radius: 7.2px;
 }
 
@@ -358,7 +365,6 @@ nav .container {
     border-radius: 7.2px;
     padding: 30px 50px;
     background: #DBDBDB;
-    color: #fff;
     width: 72%;
 }
 
@@ -389,6 +395,10 @@ nav .container {
 .c-topics-panel .l-flex-space-between {
     width: 75%;
     margin: 80px auto 110px auto;
+}
+
+.c-topics-panel .l-flex-space-between ul {
+    padding: 0 5% 0 0;
 }
 
 .c-topics-panel .dropdown {
@@ -422,6 +432,7 @@ nav .container {
 }
 
 .c-topics-panel .twitter-typeahead .tt-menu .tt-dataset-topics h5:hover {
+    cursor: pointer;
     background: #87AF3F;;
 }
 
@@ -447,7 +458,7 @@ nav .container {
 }
 
 .c-additional-resources-panel li img {
-    max-width: 160px;
+    width: 160px;
     margin-right: 50px;
     max-height: 200px;
 }
@@ -566,6 +577,85 @@ footer .designed-by span {
     align-items: flex-end;
 }
 
+@media (min-width: 481px) and (max-width: 1200px) {
+    .c-intro-panel .beta-button {
+        width: 100px;
+        margin-right: 75px;
+    }
+
+    .c-topics-panel .button-group {
+        width: 85%;
+        margin: 50px 0;
+        flex-direction: column;
+    }
+    .c-topics-panel .button-group button {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+        padding: 60px 0 30px 0;
+    }
+    footer input {
+        font-size: 12px;
+        padding: 15px;
+        border-radius: 3.6px;
+        margin: 20px 0 30px 0;
+    }
+    footer .company-logo {
+        width: 225px;
+        margin: 0 auto 20px auto;
+    }
+    footer .body-text-32 {
+        text-align: center;
+    }
+
+    footer .body-text-32:first-of-type {
+        width: 60%;
+        margin: 0 auto;
+    }
+    footer .l-flex-space-between {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .divider {
+        margin: 20px 0;
+        border: .1px solid #8C8C8C;
+    }
+    footer .c-social-media {
+        flex-direction: column;
+    }
+    footer .c-social-media li {
+        display: flex;
+        justify-content: center;
+    }
+    footer .c-social-media .social-icons {
+        width: 15px;
+    }
+    footer .body-text {
+        text-align: center;
+    }
+    footer .skillman img {
+        width: 172px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    footer .skillman p {
+        font-size: 16px;
+    }
+    footer .skillman .l-flex-align-flex-end {
+        flex-direction: column;
+        align-items: center;
+    }
+    footer .designed-by {
+        margin: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+
 @media (min-width: 320px) and (max-width: 480px) {
     .body-text-large {
         font-size: 18px;
@@ -588,7 +678,7 @@ footer .designed-by span {
         font-size: 12px;
     }
     nav {
-        display: block;
+        display: none;
         padding: 0;
         position: fixed;
         right: 0;
@@ -627,7 +717,7 @@ footer .designed-by span {
         margin-bottom: 30px;
     }
     .c-intro-panel .state-of-detroit-child {
-        display: none;
+        margin-left: -41%;
     }
     .c-our-goal-panel {
         padding: 40px;
@@ -768,8 +858,47 @@ footer .designed-by span {
     }
     .c-topics-panel .dropdown {
         display: block;
+        margin: 40px 0;
+        width: 85%;
+    }
+    
+    .c-topics-panel .dropdown button {
+        font-family: 'Quicksand-Medium';
+        background: #76AFF2;
+        color: #fff;
+        border-radius: 0;
+        font-weight: bold;
+        font-size: 13px;
+        letter-spacing: 0.91px;
+        padding: 12px 10px;
+        width: 100%;
+        text-transform: uppercase;
     }
 
+    .c-topics-panel .dropdown .topics-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #DBDBDB;
+        min-width: 85%;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .c-topics-panel .dropdown .topics-dropdown-content a {
+        color: black;
+        padding: 4px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .c-topics-panel .dropdown .topics-dropdown-content a:hover {background-color: #bdbcbc}
+
+    .c-topics-panel .dropdown:hover .topics-dropdown-content {
+        display: block;
+    }
+  
     .c-additional-resources-panel .section-main-image {
         width: 206px;
         height: 165px;
@@ -845,7 +974,7 @@ footer .designed-by span {
         align-items: center;
     }
     footer .designed-by {
-        margin-top: 20px;
+        margin: 20px;
         font-size: 12px;
         text-align: center;
     }
@@ -864,7 +993,7 @@ footer .designed-by span {
 
 @font-face {
     font-family: 'Quicksand-Regular';
-    src: url("../img/Quicksand-Regular.ttf") format("truetype");
+    src: url("../img/fonts/Quicksand-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -919,3 +1048,4 @@ input {
     flex-direction: column;
     align-items: center;
 } */
+

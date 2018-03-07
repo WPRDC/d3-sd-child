@@ -37,9 +37,7 @@
         <div class="main-container">
                 <div class="c-intro-panel">
         <header>
-            <a class='nav-link' href="">
-                <img class="beta-button" src="{{ STATIC_URL }}img/beta-button.svg" />
-            </a>
+             <img class="beta-button" src="{{ STATIC_URL }}img/beta-button.svg" title="We’re live in Beta mode. But you can make us better.  The tool – with your use – will continue to evolve and improve from its Beta mode. This year alone we’ll add additional youth-focused data sources and trend information.  We’ll also hold user-testing sessions, outreach and training."/>
             <img class="state-of-detroit-child" src="{{ STATIC_URL }}img/state-of-detroit-child.png" />
             <div class="navigation-icon-holder">
                 <img class="navigation-icon" src="{{ STATIC_URL }}img/navigation-icon.svg" id="navigationIcon" />
@@ -66,9 +64,7 @@
     </div>
     <div class="c-goal-panel">
         <div class="l-flex-center">
-            <p class="body-text">The goal of the State of the Detroit Child platform is to provide reliable, timely data to improve the well-being
-                of Detroit’s kids by driving informed deision making and advocacy at every level, from community leaders, policymakers,
-                and nonprofit organizations to individuals and families.</p>
+            <p class="body-text">The goal of the State of the Detroit Child platform is to provide reliable, timely data to improve the well-being of Detroit’s kids by driving informed decision making and advocacy at every level, from community leaders, policymakers, and nonprofit organizations to individuals and families.</p>
         </div>
         <div class="l-flex-center">
             <img class="c-arrow" src="{{ STATIC_URL }}img/section-arrow.svg" />
@@ -85,16 +81,18 @@
             </li>
             <li>
                 <img class="checkmark" src="{{ STATIC_URL }}img/checkmark.svg" />
-                <p class="body-text">Data from the granular (census tract and zip code) for anywhere in the state of Michigan</p>
+                <p class="body-text">Data from the granular (census tract and zip code)  to the large-scale (city and congressional district) for anywhere in the state of Michigan</p>
             </li>
             <li>
                 <img class="checkmark" src="{{ STATIC_URL }}img/checkmark.svg" />
                 <p class="body-text">Information displayed through interactive visualizations that make the data easy to understand</p>
             </li>
         </ul>
-        <div class="l-flex-center">
-            <button class="c-huge-rounded-button rounded-button-body-text">Click here to learn how to use this tool</button>
-        </div>
+        <a href="https://arcg.is/PGvW1">
+            <div class="l-flex-center">
+                <button class="c-huge-rounded-button rounded-button-body-text">Click here to learn how to use this tool</button>
+            </div>
+        </a>
         <div class="l-flex-center">
             <img class="c-arrow" src="{{ STATIC_URL }}img/section-arrow.svg" />
         </div>
@@ -170,10 +168,7 @@
             <h1 class="body-text-large">Hundreds of datasets by location across Detroit and Michigan!</h1>
         </div>
         <div class="l-flex-center" id="geography-select-wrapper">
-                    <input class="geography-select" type="text"
-                    placeholder="Search by Michigan places or zip codes…" autocomplete="off"
-            
-            </div>
+            <input class="geography-select" type="text" placeholder="Search by Michigan places or zip codes…" autocomplete="off" />
         </div>
         <div class="l-flex-center">
             <a href="{% url 'locate' %}">
@@ -200,9 +195,9 @@
                     <button class="c-topics-button">Getting Started</button>
                 </a>
                 <a href="{% url 'topic_detail' 'table-codes' %}">
-                    <button class="c-topics-button">Tables Codes</button>
+                    <button class="c-topics-button">Table Codes</button>
                 </a>
-                <a href="{% url 'topic_detail' 'glossary' %}">
+                <a href="{% url 'glossary' %}">
                     <button class="c-topics-button">Census Terms</button>
                 </a>
             </div>
@@ -214,7 +209,7 @@
         </div>
         <div class="l-flex-space-between">
             {% for row in topics_list|columns:7 %}
-                <ul>
+                <ul class="topics-column">
                     {% for topic in row %}
                         <li>
                             <a class="hyperlink-regular" id="topic-{{ topic.slug }}"
@@ -227,7 +222,16 @@
             {% endfor %}
         </div>
         <div class="l-flex-center">
-            <div class="dropdown"></div>
+            <div class="dropdown">
+                <button>Topics &or;</button>
+                <div class="topics-dropdown-content">
+                    {% for row in topics_list|columns:7 %}
+                        {% for topic in row %}
+                            <a href="{% url 'topic_detail' topic.slug %}">{{ topic.title }}</a>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
         </div>
         <div class="l-flex-center">
             <img class="c-arrow" src="{{ STATIC_URL }}img/section-arrow.svg" />
@@ -239,43 +243,63 @@
         </div>
         <ul>
             <li class="l-flex-space-between">
-                <img src="{{ STATIC_URL }}img/HopeStartsHere-Logo.png" alt="" />
-                <span>
-                    <p class="body-text body-text-bold">Hope Starts Here</p>
-                    <p class="body-text body-text-ligher">Childhood data and research intended to inform efforts to improve ​Detroit’s early childhood ecosystem; Hope
-                        Starts Here is a community partnership led by the W.K. Kellogg and Kresge Foundations</p>
-                </span>
+                <a href="http://ecd.datadrivendetroit.org/">
+                    <img src="{{ STATIC_URL }}img/HopeStartsHere-Logo.png" alt="" />
+                </a>
+                <a href="http://ecd.datadrivendetroit.org/">
+                    <span>
+                        <p class="body-text body-text-bold">Hope Starts Here</p>
+                        <p class="body-text body-text-ligher">Childhood data and research intended to inform efforts to improve ​Detroit’s early childhood ecosystem; Hope
+                            Starts Here is a community partnership led by the W.K. Kellogg and Kresge Foundations</p>
+                    </span>
+                </a>
             </li>
             <li class="l-flex-space-between">
-                <img src="{{ STATIC_URL }}img/DataDrivenDetroit-LogoWhite.svg" alt="" />
-                <span>
-                    <p class="body-text body-text-bold">2013 Student Dispersion Analysis</p>
-                    <p class="body-text body-text-ligher">An interactive map showing where ​students attending Detroit schools reside; created by Data Driven Detroit</p>
-                </span>
+                <a href="https://datadrivendetroit.org/studentdispersion2013/">
+                    <img src="{{ STATIC_URL }}img/DataDrivenDetroit-LogoWhite.svg" alt="" />
+                </a>
+                <a href="https://datadrivendetroit.org/studentdispersion2013/">
+                    <span>
+                        <p class="body-text body-text-bold">2013 Student Dispersion Analysis</p>
+                        <p class="body-text body-text-ligher">An interactive map showing where ​students attending Detroit schools reside; created by Data Driven Detroit</p>
+                    </span>
+                </a>
             </li>
             <li class="l-flex-space-between">
-                <img src="{{ STATIC_URL }}img/MIDeptofEducation-Logo.svg" alt="" />
-                <span>
-                    <p class="body-text body-text-bold">Parent Dashboard for School Transparency</p>
-                    <p class="body-text body-text-ligher">A dashboard that provides performance data for all public schools, including charters, in the state of Michigan;
-                        created by the Michigan Department of Education</p>
-                </span>
+                <a href="https://www.mischooldata.org/ParentDashboard">
+                    <img src="{{ STATIC_URL }}img/MIDeptofEducation-Logo.svg" alt="" />
+                </a>
+                <a href="https://www.mischooldata.org/ParentDashboard">    
+                    <span>
+                        <p class="body-text body-text-bold">Parent Dashboard for School Transparency</p>
+                        <p class="body-text body-text-ligher">A dashboard that provides performance data for all public schools, including charters, in the state of Michigan;
+                            created by the Michigan Department of Education</p>
+                    </span>
+                </a>
             </li>
             <li class="l-flex-space-between">
-                <img src="{{ STATIC_URL }}img/KidsCount-Logos.svg" alt="" />
-                <span>
-                    <p class="body-text body-text-bold">KIDS COUNT Data Center</p>
-                    <p class="body-text body-text-ligher">Child well-being data and trend analysis from trusted national resources; complied by the Annie E. Casey
-                        Foundation </p>
-                </span>
+                <a href="http://datacenter.kidscount.org/">
+                    <img src="{{ STATIC_URL }}img/KidsCount-Logos.svg" alt="" />
+                </a>
+                <a href="http://datacenter.kidscount.org/">
+                    <span>
+                        <p class="body-text body-text-bold">KIDS COUNT Data Center</p>
+                        <p class="body-text body-text-ligher">Child well-being data and trend analysis from trusted national resources; complied by the Annie E. Casey
+                            Foundation </p>
+                    </span>
+                </a>
             </li>
             <li class="l-flex-space-between">
-                <img src="{{ STATIC_URL }}img/KidsCountinMI-Logo.svg" alt="" />
-                <span>
-                    <p class="body-text body-text-bold">Kids Count in Michigan</p>
-                    <p class="body-text body-text-ligher">State and local-level child well-being data and analysis; led by the Michigan League for Public Policy as
-                        part of the Annie E. Casey Foundation’s national KIDS COUNT effort</p>
-                </span>
+                <a href="http://www.mlpp.org/kids-count">
+                    <img src="{{ STATIC_URL }}img/KidsCountinMI-Logo.svg" alt="" />
+                </a>
+                <a href="http://www.mlpp.org/kids-count">
+                    <span>
+                        <p class="body-text body-text-bold">Kids Count in Michigan</p>
+                        <p class="body-text body-text-ligher">State and local-level child well-being data and analysis; led by the Michigan League for Public Policy as
+                            part of the Annie E. Casey Foundation’s national KIDS COUNT effort</p>
+                    </span>
+                </a>
             </li>
         </ul>
         <div class="l-flex-center">
@@ -284,7 +308,9 @@
     </div>
     <footer>
         <div class="l-flex-space-between">
-            <img class="company-logo" src="{{ STATIC_URL }}img/DataDrivenDetroit-LogoColor.svg" />
+            <a href="http://datadrivendetroit.org/">
+                <img class="company-logo" src="{{ STATIC_URL }}img/DataDrivenDetroit-LogoColor.svg" />
+            </a>
             <div class="details">
                 <p class="body-text-32">Suggestions? We’d love to hear them! Contact us at
                     <a href="mailto:askd3@datadrivendetroit.org" target="_top">
@@ -292,50 +318,52 @@
                     </a>
                 </p>
                 <div class="divider"></div>
-                <div class="newsletter">
-                    <p class="body-text-32 light-green">Newsletter</p>
-                    <p class="body-text body-text-ligher">
-                        <a href="http://datadrivendetroit.org/subscribe_to_newsletter/">
-                            <span class="light-blue">Sign Up</span>
-                        </a>for our newsletter to stay up to date!
-                    </p>
-                </div>
-                &nbsp;
                 <div class="c-social-media">
                     <ul>
                         <li class="l-flex-align-center">
-                            <img class="social-icons" src="{{ STATIC_URL }}img/facebook.png"/>
+                            <a href="https://www.facebook.com/DataDrivenDetroit">
+                                <img class="social-icons" src="{{ STATIC_URL }}img/facebook.png"/>
+                            </a>
                             <a class="hyperlink-bold-small" href="https://www.facebook.com/DataDrivenDetroit">D3 on Facebook</a>
                         </li>
                         <li class="l-flex-align-center">
-                            <img class="social-icons" src="{{ STATIC_URL }}img/twitter.png"/>
+                            <a href="https://twitter.com/d3detroit">
+                                <img class="social-icons" src="{{ STATIC_URL }}img/twitter.png"/>
+                            </a>
                             <a class="hyperlink-bold-small" href="https://twitter.com/d3detroit">D3 on Twitter</a>
                         </li>
                         <li class="l-flex-align-center">
-                            <img class="social-icons" src="{{ STATIC_URL }}img/linkedin.png"/>
+                            <a href="https://www.linkedin.com/company/data-driven-detroit">
+                                <img class="social-icons" src="{{ STATIC_URL }}img/linkedin.png"/>
+                            </a>
                             <a class="hyperlink-bold-small" href="https://www.linkedin.com/company/data-driven-detroit">D3 on LinkedIn</a>
                         </li>
                     </ul>
                     <ul>
                         <li class="l-flex-align-center">
-                            <img class="social-icons" src="{{ STATIC_URL }}img/web.png"/>
+                            <a class="hyperlink-bold-small" href="https://censusreporter.org/">
+                                <img class="social-icons" src="{{ STATIC_URL }}img/web.png"/>
+                            </a>
                             <a class="hyperlink-bold-small" href="https://censusreporter.org/">Census Reporter on the Web</a>
                         </li>
                         <li class="l-flex-align-center">
-                            <img class="social-icons" src="{{ STATIC_URL }}img/github.png"/>
+                            <a class="hyperlink-bold-small" href="https://github.com/censusreporter/">
+                                <img class="social-icons" src="{{ STATIC_URL }}img/github.png"/>
+                            </a>
                             <a class="hyperlink-bold-small" href="https://github.com/censusreporter/">Census Reporter on Github</a>
                         </li>
                     </ul>
                 </div>
                 <div class="divider"> </div>
-                <div class="skillman">
-                    <div class="l-flex-align-flex-end">
-                        <img src="{{ STATIC_URL }}img/SkillmanFoundation-Logo.png" />
-                        <p>Supported by The Skillman Foundation</p>
+                <a href="http://www.skillman.org/">
+                    <div class="skillman">
+                        <div class="l-flex-align-flex-end">
+                            <img src="{{ STATIC_URL }}img/SkillmanFoundation-Logo.png" />
+                            <p>Supported by The Skillman Foundation</p>
+                        </div>
                     </div>
-                </div>
-                <p class="designed-by">Designed by
-                    <a href="http://gooddonedaily.com/"><span>gdd.</span></a>
+                </a>
+                <p class="designed-by">Site built and designed by <a href="http://nijel.org/"><span>NiJeL</span></a>, based on <a href="https://censusreporter.org/"><span>Census Reporter</span></a>. </a> Homepage designed by <a href="http://gooddonedaily.com/"><span>gdd</span></a>.
                 </p>
             </div>
         </div>

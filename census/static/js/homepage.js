@@ -18,7 +18,6 @@ $('.nav-link').click(() => {
 
 
 let desktopToggle = () => {
-    console.log(isNavOpen, "Status of FLAG");
     if (!isNavOpen) {
         $("html, body").animate({
             scrollTop: 0
@@ -35,6 +34,8 @@ let mobileToggle = () => {
     let contentWidth;
 
     if (!isNavOpen) {
+        $('body').css('overflow', 'hidden');        
+        $(nav).css('display', 'block');
         contentWidth = $('.main-container').width();
         $('.main-container').css('width', contentWidth);
 
@@ -46,19 +47,18 @@ let mobileToggle = () => {
         isNavOpen = true;
 
     } else {
-        // $('.main-container').unbind('touchmove');
-
         $(".parent-container").animate({
             "marginLeft": ["0%"]
         }, {
             duration: 700,
             complete: function () {
                 $('.main-container').css('width', 'auto');
+                $(nav).css('display', 'none');
+                $('body').css('overflow', 'scroll');
             }
         });
         isNavOpen = false;
     }
-
 };
 
 let hideNav = () => {
@@ -74,7 +74,7 @@ let hideNav = () => {
             hasScrolled();
             didScroll = false;
         }
-    }, 250);
+    }, 120);
 
     function hasScrolled() {
         let st = $(this).scrollTop();
